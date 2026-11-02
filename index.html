@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ram Krishan Pathak</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfolio of Ram Krishan Pathak, a self-taught product designer and AI-native builder in Varanasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=UnifrakturMaguntia&display=swap">
+<style>
+/* Layout: a library catalogue. A typed index card opens the page; each project is shelved under a real Dewey call number,
+   with text on the left and evidence on the right, stacking on phones. */
+:root{
+  --paper:#F3F4F6; --card:#FFFFFF; --ink:#15171C; --muted:#5D6370; --rule:#D8DBE1;
+  --stamp:#5638C2; --stamp-soft:#ECE7FC; --redline:#C9434A; --cardline:#C9D6EA;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --black:"UnifrakturMaguntia", "Old English Text MT", Georgia, serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1014; --card:#171A20; --ink:#E7E9ED; --muted:#9BA2AE; --rule:#2A2F38;
+  --stamp:#AE9BFF; --stamp-soft:#211B3B; --redline:#E2696F; --cardline:#283246; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0E1014; --card:#171A20; --ink:#E7E9ED; --muted:#9BA2AE; --rule:#2A2F38;
+  --stamp:#AE9BFF; --stamp-soft:#211B3B; --redline:#E2696F; --cardline:#283246; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased}
+a{color:var(--stamp);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--stamp);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-0.02em}
+p{margin:0}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Top bar */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:24px;border-bottom:1px solid var(--rule)}
+.top .who{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.top nav{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:.8rem}
+.top nav a{color:var(--ink);text-decoration:none}
+.top nav a:hover{color:var(--stamp)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:72px 80px}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:800}
+.hero h1 span{color:var(--stamp)}
+.hero .lede{margin-top:24px;max-width:36rem;font-size:1.2rem;color:var(--ink)}
+.hero .links{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.85rem;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);text-decoration:none;background:transparent}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--stamp);color:var(--stamp);text-decoration:none}
+.btn.primary:hover{background:var(--stamp);border-color:var(--stamp);color:var(--paper)}
+
+/* Catalogue card */
+.catcard{position:relative;background:var(--card);border-radius:6px;padding:26px 28px 44px;font-family:var(--mono);font-size:.84rem;line-height:1.9;
+  box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(20,20,40,.35);transform:rotate(1.2deg);
+  background-image:linear-gradient(to bottom,transparent 46px,var(--redline) 46px,var(--redline) 47.5px,transparent 47.5px),
+    repeating-linear-gradient(to bottom,transparent 0,transparent calc(1.9em - 1px),var(--cardline) calc(1.9em - 1px),var(--cardline) 1.9em);
+  background-position:0 0,0 66px;background-repeat:no-repeat,repeat-y}
+.catcard .callno{position:absolute;left:28px;top:16px;color:var(--muted);font-size:.78rem;line-height:1.3}
+.catcard .head{margin-top:42px;padding-left:5.5em;text-indent:-2em;font-weight:500}
+.catcard .ind{padding-left:5.5em}
+.catcard .hole{position:absolute;left:50%;bottom:14px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:var(--paper);box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.catcard .tag{color:var(--stamp)}
+
+/* Principles */
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding-block:40px 64px;border-top:1px solid var(--rule)}
+.principles h3{font-size:1.15rem;margin-top:8px}
+.principles p{margin-top:8px;color:var(--muted);font-size:1rem}
+
+/* Case studies */
+.shelf-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-top:40px;border-top:2px solid var(--ink)}
+.shelf-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.case{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding-block:64px;border-bottom:1px solid var(--rule)}
+.case:last-of-type{border-bottom:0}
+.case .meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.callnum{font-family:var(--mono);font-size:.8rem;color:var(--muted)}
+.stampmark{display:inline-block;font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--stamp);
+  border:2px solid var(--stamp);outline:1px solid var(--stamp);outline-offset:2px;padding:2px 8px;transform:rotate(-2.5deg);border-radius:3px;opacity:.9}
+.case h3{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:18px}
+.case .q{margin-top:14px;font-size:1.15rem;font-style:italic;color:var(--ink)}
+.case .facts{margin-top:18px;font-family:var(--mono);font-size:.8rem;color:var(--muted);line-height:1.7}
+.case h4{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stamp);margin:28px 0 8px;font-weight:500}
+.case ul{margin:0;padding-left:1.1em;display:grid;gap:8px}
+.case li{padding-left:.2em}
+.case li::marker{color:var(--stamp)}
+.case .text{min-width:0}
+.case .text>p+p{margin-top:12px}
+.case .more{margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.85rem}
+.media{min-width:0;display:grid;gap:16px;align-content:start}
+.media figure{margin:0}
+.media img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--rule);background:var(--card)}
+.media figcaption{margin-top:8px;font-family:var(--mono);font-size:.75rem;color:var(--muted);line-height:1.5}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+code.formula{display:block;font-family:var(--mono);font-size:.82rem;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;overflow-x:auto;white-space:pre}
+
+/* Automation flow diagram */
+.flow{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px}
+.flow ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:step}
+.flow li{position:relative;border:1.5px solid var(--rule);border-radius:8px;padding:12px;background:var(--paper);font-size:.92rem;line-height:1.4}
+.flow li strong{display:block;font-family:var(--display);font-size:.98rem;margin-bottom:4px}
+.flow li .who{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.flow li.gate{border-color:var(--stamp);background:var(--stamp-soft)}
+.flow li.gate .who{color:var(--stamp)}
+.flow li:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translate(50%,-50%);font-family:var(--mono);color:var(--muted);font-size:1rem}
+.flow .reject{margin-top:12px;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.minis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.mini{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.mini h5{font-family:var(--display);font-size:1rem;margin:0 0 6px}
+.mini p{font-size:.95rem;color:var(--muted)}
+.mini .time{font-family:var(--mono);font-size:.75rem;color:var(--stamp);margin-bottom:6px}
+
+/* Newsletter masthead panel */
+.masthead{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:34px 28px;text-align:center}
+.masthead .rule2{border-top:3px double var(--ink);border-bottom:1px solid var(--ink);height:6px;margin:14px auto}
+.masthead .title{font-family:var(--black);font-size:clamp(2rem,5vw,3.2rem);line-height:1.1}
+.masthead .dateline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.masthead .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px;text-align:left}
+.masthead .cols div{border-top:1px solid var(--rule);padding-top:10px}
+.masthead .cols b{display:block;font-family:var(--display);font-size:1rem}
+.masthead .cols span{font-size:.9rem;color:var(--muted)}
+.masthead .btn{margin-top:26px}
+
+/* Workbench */
+.bench{padding-block:56px 24px;border-top:2px solid var(--ink)}
+.bench h2{font-size:clamp(1.8rem,3.4vw,2.4rem)}
+.bench>p{margin-top:10px;color:var(--muted);max-width:40rem}
+.repos{margin-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.repo{background:var(--card);padding:18px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:6px;min-width:0}
+.repo:hover{background:var(--stamp-soft);text-decoration:none}
+.repo b{font-family:var(--display);font-size:1rem}
+.repo span{font-size:.9rem;color:var(--muted);line-height:1.45}
+.repo i{font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stamp);margin-top:auto;padding-top:6px}
+
+/* Contact */
+.contact{margin-block:64px 40px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end;padding-top:48px;border-top:1px solid var(--rule)}
+.contact h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+.contact p{margin-top:12px;color:var(--muted);max-width:32rem}
+.contact dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 18px;font-family:var(--mono);font-size:.9rem}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0;overflow-wrap:anywhere;user-select:all}
+.contact dd a{user-select:auto}
+footer{padding-block:24px 48px;font-family:var(--mono);font-size:.75rem;color:var(--muted);border-top:1px solid var(--rule)}
+
+@media (max-width:860px){
+  .hero,.case,.contact{grid-template-columns:minmax(0,1fr);gap:36px}
+  .hero{padding-block:48px 56px}
+  .catcard{transform:none;max-width:520px}
+  .principles{grid-template-columns:minmax(0,1fr);gap:20px}
+  .repos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow ol{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .flow li:nth-child(2)::after{content:none}
+}
+@media (max-width:520px){
+  .pair,.minis,.masthead .cols{grid-template-columns:minmax(0,1fr)}
+  .repos{grid-template-columns:minmax(0,1fr)}
+  .flow ol{grid-template-columns:minmax(0,1fr)}
+  .flow li:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-12px;transform:translate(50%,50%)}
+  .flow li:nth-child(2)::after{content:"↓"}
+  .catcard{font-size:.78rem;padding-inline:20px}
+  .catcard .head,.catcard .ind{padding-left:3.5em}
+}
+@media (prefers-reduced-motion:no-preference){
+  .catcard{transition:transform .4s ease}
+  .catcard:hover{transform:rotate(0deg) translateY(-2px)}
+}
+</style>
+
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta property="og:title" content="Ram Krishan Pathak">
+<meta property="og:description" content="Self-taught product designer and AI-native builder in Varanasi.">
+<meta property="og:image" content="https://13pathak.github.io/assets/meme-mirror-game.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%235638C2%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2214%22 fill=%22white%22 text-anchor=%22middle%22%3ERKP%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="who">Ram Krishan Pathak</div>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#bench">Workbench</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="label">Product designer · AI-native builder · Varanasi</p>
+      <h1 style="margin-top:18px">Librarian by title. <span>Product builder</span> by habit.</h1>
+      <p class="lede">I find the friction in everyday school life, design a fix, and ship it, usually within days. My users are students from Class III to X, their parents and their teachers. They tell you in seconds when a design doesn’t work.</p>
+      <div class="links">
+        <a class="btn primary" href="#work">See the work ↓</a>
+        <a class="btn" href="https://github.com/13pathak" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://x.com/AGI_Pulse" target="_blank" rel="noopener">X · @AGI_Pulse</a>
+      </div>
+    </div>
+
+    <div class="catcard" role="img" aria-label="A library catalogue card describing Ram Krishan Pathak">
+      <div class="callno">745.2 PAT</div>
+      <div class="head">Pathak, Ram Krishan.</div>
+      <div class="ind">Product designer &amp; AI-native builder / Ram Krishan Pathak. — Varanasi : Self-published, 2025–.</div>
+      <div class="ind">5 case studies ; 17 public repositories ; 3,800+ posts on AI.</div>
+      <div class="ind">Prototyped with Claude Code and Codex.</div>
+      <div class="ind"><span class="tag">1.</span> Interaction design. <span class="tag">2.</span> Artificial intelligence. <span class="tag">3.</span> Schools — India. I. Title.</div>
+      <div class="hole" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="principles" aria-label="How I work">
+    <div>
+      <p class="label">Principle 1</p>
+      <h3>Ship, then sharpen</h3>
+      <p>Meme Mirror went from idea to a live exhibit at a Parent-Teacher Meeting in days, then got retuned from how families actually played.</p>
+    </div>
+    <div>
+      <p class="label">Principle 2</p>
+      <h3>Design for the real room</h3>
+      <p>Noisy halls, shared school laptops, no internet, eight-year-olds and their parents. The constraints are the brief.</p>
+    </div>
+    <div>
+      <p class="label">Principle 3</p>
+      <h3>Humans in the loop, privacy by default</h3>
+      <p>Meme Mirror saves no faces. My AI report pipeline waits for a person to approve before anything goes live.</p>
+    </div>
+  </section>
+
+  <main id="work">
+    <div class="shelf-head">
+      <h2>Selected work</h2>
+      <p class="label">Shelved by Dewey Decimal, as a librarian should</p>
+    </div>
+
+    <!-- 1. AI Popup Infopedia -->
+    <article class="case" id="infopedia">
+      <div class="text">
+        <div class="meta"><span class="callnum">006.3 PAT</span><span class="stampmark">Live · v8.11</span></div>
+        <h3>AI Popup Infopedia</h3>
+        <p class="q">How do you get a trustworthy explanation of a word without leaving the page you’re reading?</p>
+        <p class="facts">Chrome extension · Design, build, ship · JavaScript, pdf.js, PDFLib</p>
+
+        <h4>What I designed</h4>
+        <ul>
+          <li><strong>Select, then understand.</strong> Highlight 1 to 6 words on any page or PDF and an explanation appears beside it. One shortcut opens an empty chat when nothing is selected.</li>
+          <li><strong>Quiet when right, loud when wrong.</strong> A second model checks each answer. A clean result is a small “Verified” badge; only a likely error opens a red box, with the corrections first.</li>
+          <li><strong>Onboarding that tracks itself.</strong> A three-step checklist on the settings page ticks off as people add a model, test it and try the popup.</li>
+          <li><strong>A reader, not just a viewer.</strong> A custom PDF viewer with highlights, notes, a focus mode and reading position that survives a restart.</li>
+          <li><strong>Remember what you looked up.</strong> Saved words become flashcards with spaced repetition, so lookups turn into learning.</li>
+        </ul>
+        <h4>What happened</h4>
+        <p>Published on the Chrome Web Store and still shipping: version 8.11 went out in October 2026. I also built a React Native version for Android.</p>
+        <div class="more">
+          <a href="https://chromewebstore.google.com/detail/ai-popup-infopedia/jejfdgeiihgomipkhjkbplikgkcjcpab" target="_blank" rel="noopener">Chrome Web Store ↗</a>
+          <a href="https://github.com/13pathak/AI-Popup-Infopedia" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        </div>
+      </div>
+      <div class="media">
+        <figure>
+          <img src="assets/infopedia-settings.jpg" width="1600" height="1000" loading="lazy" alt="Settings page of AI Popup Infopedia with a Get Started checklist and a diagnostic test button">
+          <figcaption>The settings page opens on a self-tracking checklist, so setup is guided rather than documented.</figcaption>
+        </figure>
+        <figure style="max-width:380px">
+          <img src="assets/infopedia-popup.jpg" width="630" height="430" loading="lazy" alt="Toolbar popup with Review flashcards and Settings and Usage buttons">
+          <figcaption>Toolbar popup: the next action comes first, with due flashcards counted on the button.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- 2. School workflow automations -->
+    <article class="case" id="automations">
+      <div class="text">
+        <div class="meta"><span class="callnum">371.2 PAT</span><span class="stampmark">Running daily</span></div>
+        <h3>School workflow automations</h3>
+        <p class="q">What if repetitive staff chores ran themselves, and people only stepped in where judgment matters?</p>
+        <p class="facts">Internal tools · Google Apps Script, Telegram Bot API, Gemini</p>
+
+        <h4>What I designed</h4>
+        <ul>
+          <li><strong>A self-observation pipeline</strong> that turns a recorded class into a written observation report in the staff sheet.</li>
+          <li><strong>A human gate.</strong> AI models can invent details about a class, so every draft waits in Telegram for one tap to approve. AI drafts, a person decides.</li>
+          <li><strong>Zero new habits.</strong> Recordings were already named like “10A 30sept”, so the pipeline reads the class and date from the file name instead of asking for a form.</li>
+        </ul>
+        <h4>What happened</h4>
+        <p>Three automations now run without anyone remembering to run them, and the academic team gets its reports without anyone compiling them by hand.</p>
+      </div>
+      <div class="media">
+        <div class="flow" role="figure" aria-label="Self-observation pipeline">
+          <p class="label" style="margin-bottom:14px">Self-observation pipeline</p>
+          <ol>
+            <li><span class="who">Teacher</span><strong>Records the class</strong>Audio saved to a Drive folder, named by class and date.</li>
+            <li><span class="who">Apps Script + Gemini</span><strong>Drafts the report</strong>Uses the school’s own observation prompt.</li>
+            <li class="gate"><span class="who">Human gate · Telegram</span><strong>Approve or reject</strong>Nothing moves until a person taps Approve.</li>
+            <li><span class="who">Staff sheet</span><strong>Report goes live</strong>Google Doc created and linked in the shared sheet.</li>
+          </ol>
+          <p class="reject">Rejected drafts stay out of the sheet.</p>
+        </div>
+        <div class="minis">
+          <div class="mini">
+            <p class="time">Every school day</p>
+            <h5>Classroom inspection report</h5>
+            <p>Shows the academic head which teachers posted classwork and homework in Google Classroom, plus a monthly roll-up.</p>
+          </div>
+          <div class="mini">
+            <p class="time">Before 6:45 AM on test days</p>
+            <h5>Unit Test notice bot</h5>
+            <p>A Telegram message listing the classes and subjects being tested, ready to forward to the teachers’ group.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. Meme Mirror -->
+    <article class="case" id="meme-mirror">
+      <div class="text">
+        <div class="meta"><span class="callnum">006.37 PAT</span><span class="stampmark">Shipped · 14 Oct 2026</span></div>
+        <h3>Meme Mirror</h3>
+        <p class="q">How do you get parents and kids laughing together at a Parent-Teacher Meeting, on a school laptop, with no internet and no data collected?</p>
+        <p class="facts">Offline AI game · Concept, UX, visual design, build · MediaPipe Face Landmarker, plain HTML/CSS/JS</p>
+
+        <h4>What I designed</h4>
+        <ul>
+          <li><strong>A family face-off.</strong> Child plays first, then the parent copies the same three faces. Copy the face, hold it, see your score: about 75 to 100 seconds per family.</li>
+          <li><strong>Memes written for the room.</strong> “The test has a second page.” “The last samosa is gone.” Every face is a school-day situation both generations recognise.</li>
+          <li><strong>Fair scoring.</strong> A blank face earns nothing, a stronger version of the right expression still wins, and a hold needs one steady second, so nobody wins on a lucky frame.</li>
+          <li><strong>Built for a crowded hall.</strong> A one-click launcher, an operator desk for camera trouble, Retry and Skip so no family gets stuck, and an A3 poster that teaches the game before anyone touches it.</li>
+          <li><strong>Privacy by design.</strong> No accounts, names or saved photos. The model runs on the laptop, and the replay lives in memory only.</li>
+        </ul>
+        <code class="formula" aria-label="Scoring formula">match = 100 × clamp((1 − E) × A − P, 0, 1)
+E = distance from the target face
+A = how much of the target you reached
+P = penalty for conflicting moves</code>
+        <h4>What happened</h4>
+        <p>Families played it live at the PTM. On the day, one reference face kept confusing players, so I swapped it back to the illustration.</p>
+        <div class="more">
+          <a href="https://github.com/13pathak/meme-mirror" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        </div>
+      </div>
+      <div class="media">
+        <figure>
+          <img src="assets/meme-mirror-game.jpg" width="1600" height="1000" loading="lazy" alt="Meme Mirror game screen: a surprised emoji to copy on the left, the camera panel on the right, and an expression match bar below">
+          <figcaption>Game screen. The face to copy on the left, your camera on the right, the score and the next action underneath.</figcaption>
+        </figure>
+        <div class="pair">
+          <figure>
+            <img src="assets/meme-mirror-poster.jpg" width="900" height="1272" loading="lazy" alt="A3 visitor poster explaining Meme Mirror in six steps">
+            <figcaption>A3 visitor poster: six steps, readable from the queue.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/meme-mirror-operator.jpg" width="900" height="1041" loading="lazy" alt="Operator desk dialog with camera selection, execution mode and live diagnostics">
+            <figcaption>Operator desk: camera, CPU fallback and live diagnostics for whoever runs the stall.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. The Literary Lighthouse -->
+    <article class="case" id="lighthouse">
+      <div class="text">
+        <div class="meta"><span class="callnum">741.6 PAT</span><span class="stampmark">Monthly</span></div>
+        <h3>The Literary Lighthouse</h3>
+        <p class="q">How do you make a school newsletter that students actually pick up and read?</p>
+        <p class="facts">Print and digital editorial design · Editor, designer, art director</p>
+
+        <h4>What I designed</h4>
+        <ul>
+          <li><strong>12 pages, every month, end to end:</strong> curation, layout, typography, artwork, approval, distribution to every class’s Google Classroom, and print.</li>
+          <li><strong>Full-page art, art-directed.</strong> I generate illustrations with AI and blend them into page backgrounds, sized to stay sharp when printed larger than A4.</li>
+          <li><strong>A type system that lasts.</strong> Chomsky blackletter for headings and Aptos for body text, held consistent across issues.</li>
+          <li><strong>A stage for students.</strong> “Ink &amp; Imagination” is a section for students’ own poems and stories.</li>
+        </ul>
+      </div>
+      <div class="media">
+        <div class="masthead">
+          <div class="dateline"><span>Sunbeam International School, Varuna</span><span>November 2026</span></div>
+          <div class="rule2" aria-hidden="true"></div>
+          <div class="title">The Literary Lighthouse</div>
+          <div class="rule2" aria-hidden="true"></div>
+          <div class="cols">
+            <div><b>12 pages</b><span>Every month, in print and online</span></div>
+            <div><b>Every class</b><span>Posted to each Google Classroom</span></div>
+            <div><b>Ink &amp; Imagination</b><span>Students’ own poems and stories</span></div>
+          </div>
+          <a class="btn primary" href="https://drive.google.com/file/d/1tkNlB83lBklpo7l6JwUbNGgA623ayDvk/view?usp=sharing" target="_blank" rel="noopener">Read the November issue (PDF) ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. Library Shelf Twin -->
+    <article class="case" id="shelf-twin">
+      <div class="text">
+        <div class="meta"><span class="callnum">027.8 PAT</span><span class="stampmark">In progress</span></div>
+        <h3>Library Shelf Twin</h3>
+        <p class="q">Students can’t search a shelf they can’t see. What if a photo of the shelf became the catalogue?</p>
+        <p class="facts">Web app · Next.js, Cloudflare D1 and R2, spine detection · Built with Codex</p>
+        <h4>The idea</h4>
+        <p>Photograph a library cupboard and get an interactive digital twin: every spine becomes a book students can browse and tap, so kids know what the school library holds before they walk in.</p>
+        <div class="more">
+          <a href="https://github.com/13pathak/Book_Shelf" target="_blank" rel="noopener">Follow the build on GitHub ↗</a>
+        </div>
+      </div>
+      <div class="media" aria-hidden="true">
+        <svg viewBox="0 0 560 250" width="100%" style="max-width:100%;height:auto;display:block" role="presentation">
+          <rect x="0.5" y="0.5" width="559" height="249" rx="10" fill="var(--card)" stroke="var(--rule)"/>
+          <g fill="var(--paper)" stroke="var(--rule)" stroke-width="1.5">
+            <rect x="30" y="60" width="26" height="140" rx="2"/><rect x="58" y="80" width="20" height="120" rx="2"/>
+            <rect x="80" y="50" width="32" height="150" rx="2"/><rect x="114" y="70" width="22" height="130" rx="2"/>
+            <rect x="138" y="90" width="28" height="110" rx="2"/><rect x="168" y="56" width="24" height="144" rx="2"/>
+            <rect x="194" y="76" width="30" height="124" rx="2"/><rect x="226" y="64" width="20" height="136" rx="2"/>
+          </g>
+          <rect x="80" y="50" width="32" height="150" rx="2" fill="var(--stamp-soft)" stroke="var(--stamp)" stroke-width="2"/>
+          <line x1="20" y1="201" x2="256" y2="201" stroke="var(--ink)" stroke-width="3"/>
+          <path d="M112 120 C 190 120, 230 110, 300 110" fill="none" stroke="var(--stamp)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <rect x="300" y="60" width="230" height="130" rx="8" fill="var(--paper)" stroke="var(--stamp)" stroke-width="1.5"/>
+          <rect x="318" y="78" width="54" height="76" rx="3" fill="var(--stamp-soft)" stroke="var(--rule)"/>
+          <rect x="384" y="82" width="120" height="10" rx="3" fill="var(--ink)" opacity=".8"/>
+          <rect x="384" y="100" width="90" height="8" rx="3" fill="var(--muted)" opacity=".6"/>
+          <rect x="384" y="122" width="56" height="18" rx="9" fill="none" stroke="var(--stamp)"/>
+          <rect x="318" y="166" width="190" height="6" rx="3" fill="var(--rule)"/>
+        </svg>
+        <p class="label" style="text-transform:none;letter-spacing:0">Concept sketch: tap a spine on the photographed shelf to open that book’s card.</p>
+      </div>
+    </article>
+  </main>
+
+  <section class="bench" id="bench">
+    <h2>From the workbench</h2>
+    <p>Smaller tools I built to scratch my own itches. Most are Chrome extensions, because the browser is where my day happens.</p>
+    <div class="repos">
+      <a class="repo" href="https://github.com/13pathak/AI-Council" target="_blank" rel="noopener"><b>AI Council</b><span>Chat with up to four AI bots side by side in one 2×2 grid.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/mindful-browsing" target="_blank" rel="noopener"><b>Mindful Browsing</b><span>A gentle “reality check” overlay after a set time, instead of a hard block.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/Cric-Update" target="_blank" rel="noopener"><b>Cricket Live Updates</b><span>Live scores in a TV-broadcast-style bar along the bottom of any page.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/Gitblitz" target="_blank" rel="noopener"><b>GitBlitz</b><span>A “Fix This Repo” button that forks a GitHub repo and copies the clone command.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/AI-Ankipedia" target="_blank" rel="noopener"><b>AI Ankipedia</b><span>Select text on an Anki card mid-review and get an instant AI explanation.</span><i>Anki add-on</i></a>
+      <a class="repo" href="https://github.com/13pathak/Grok-Pop" target="_blank" rel="noopener"><b>Grok Pop</b><span>A floating side panel for Grok that follows you across tabs.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/Website-Timer" target="_blank" rel="noopener"><b>Website Time Blocker</b><span>Daily time limits for distracting sites, with blocks you set yourself.</span><i>Chrome extension</i></a>
+      <a class="repo" href="https://github.com/13pathak/AI-Popup-Android-" target="_blank" rel="noopener"><b>Infopedia for Android</b><span>The AI Popup Infopedia idea, rebuilt for phones.</span><i>React Native · Expo</i></a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div>
+      <h2>Let’s build something people actually use.</h2>
+      <p>I’m looking for a product design role on a team that ships. Open to relocating. I post about AI every day on X, so that’s the fastest way to see how I think.</p>
+    </div>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:13pathak@gmail.com">13pathak@gmail.com</a></dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/13pathak" target="_blank" rel="noopener">github.com/13pathak</a></dd>
+      <dt>X</dt><dd><a href="https://x.com/AGI_Pulse" target="_blank" rel="noopener">@AGI_Pulse</a></dd>
+      <dt>Blog</dt><dd><a href="https://ramkp13.blogspot.com/" target="_blank" rel="noopener">ramkp13.blogspot.com</a></dd>
+    </dl>
+  </section>
+
+  <footer>Catalogued and built by Ram Krishan Pathak, Varanasi. Screens are from the real projects.</footer>
+</div>
+
+</body>
+</html>
